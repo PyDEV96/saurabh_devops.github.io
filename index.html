@@ -26,7 +26,45 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fadeIn { animation: fadeInUp 0.8s ease forwards; }
+        .animate-fadeIn { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+
+        /* Timeline Fixes */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #1e293b;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-container::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .experience-item {
+                width: 50%;
+            }
+            .experience-item:nth-child(odd) {
+                padding-right: 3rem;
+                align-self: flex-start;
+            }
+            .experience-item:nth-child(even) {
+                padding-left: 3rem;
+                align-self: flex-end;
+            }
+        }
     </style>
 </head>
 <body class="grid-bg">
@@ -58,8 +96,8 @@
                     Focused on reliability engineering, performance optimization, and AI-assisted monitoring.
                 </p>
                 <div class="flex gap-4">
-                    <a href="Resume.pdf" download="Saurabh_Sharma_Resume.pdf" class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-lg shadow-sky-500/20 inline-block">Download Resume</a>
-                    <a href="YOUR_LINKEDIN_URL" target="_blank" class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-lg font-semibold transition inline-block">LinkedIn Profile</a>
+                    <a href="Resume.pdf" download class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-lg shadow-sky-500/20">Download Resume</a>
+                    <a href="#" target="_blank" class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-lg font-semibold transition">LinkedIn Profile</a>
                 </div>
             </div>
             <div class="relative flex justify-center">
@@ -73,7 +111,7 @@
 
     <section id="impact" class="py-24 bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16">Performance Impact</h2>
+            <h2 class="text-4xl font-bold mb-16 text-white">Performance Impact</h2>
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="glass-card p-8 rounded-2xl text-center">
                     <div class="text-4xl font-bold text-sky-400 mb-2">50%</div>
@@ -88,12 +126,12 @@
                 <div class="glass-card p-8 rounded-2xl text-center">
                     <div class="text-4xl font-bold text-sky-400 mb-2">-70%</div>
                     <div class="text-xs uppercase tracking-widest text-slate-500 mb-4">Provisioning Time</div>
-                    <p class="text-sm text-slate-400">Automated AWS infra with CloudFormation</p>
+                    <p class="text-sm text-slate-400">Automated AWS infrastructure with CloudFormation</p>
                 </div>
                 <div class="glass-card p-8 rounded-2xl text-center">
                     <div class="text-4xl font-bold text-sky-400 mb-2">95%</div>
                     <div class="text-xs uppercase tracking-widest text-slate-500 mb-4">Proficiency</div>
-                    <p class="text-sm text-slate-400">AWS Lambda, S3 & Cloud Infrastructure</p>
+                    <p class="text-sm text-slate-400">AWS Lambda, S3, & Cloud Infrastructure</p>
                 </div>
             </div>
         </div>
@@ -101,7 +139,7 @@
 
     <section id="skills" class="py-24">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-4">Technical Arsenal</h2>
+            <h2 class="text-4xl font-bold mb-4 text-white">Technical Arsenal</h2>
             <p class="text-slate-400 mb-16">Expertise in CI/CD, Infrastructure as Code, and Container Platforms.</p>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="glass-card p-8 rounded-3xl text-left">
@@ -112,7 +150,6 @@
                         <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">GCP</span>
                         <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Docker</span>
                         <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Terraform</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Kubernetes</span>
                     </div>
                 </div>
                 <div class="glass-card p-8 rounded-3xl text-left">
@@ -121,8 +158,7 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Splunk SignalFx</span>
                         <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">PagerDuty</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">IAM</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">AWS Cloud Armor</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">AI-based Log Analysis</span>
                     </div>
                 </div>
                 <div class="glass-card p-8 rounded-3xl text-left">
@@ -131,8 +167,7 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Python</span>
                         <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">TypeScript</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Django</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Flask</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Django REST</span>
                     </div>
                 </div>
             </div>
@@ -140,76 +175,79 @@
     </section>
 
     <section id="experience" class="py-24 bg-slate-900/50">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center">Career Trajectory</h2>
-            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-0 md:left-1/2">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center text-white">Career Trajectory</h2>
+            
+            <div class="timeline-container relative flex flex-col">
                 
-                <div class="mb-16 md:w-1/2 md:pr-12 md:text-right md:ml-[-50%] relative">
-                    <span class="absolute w-5 h-5 bg-sky-500 rounded-full -left-[11px] md:-right-[11px] md:left-auto border-4 border-slate-950 z-10"></span>
-                    <div class="glass-card p-8 rounded-3xl animate-fadeIn">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div class="experience-item animate-fadeIn">
+                    <span class="absolute w-5 h-5 bg-sky-500 rounded-full border-4 border-slate-950 z-10 
+                        left-[12px] md:left-auto md:right-[-10px] top-8"></span>
+                    <div class="glass-card p-8 rounded-3xl ml-10 md:ml-0 md:text-right">
+                        <div class="flex flex-col md:flex-row-reverse justify-between items-start md:items-center mb-4 gap-2">
                             <h3 class="text-2xl font-bold text-white">DevOps Engineer</h3>
                             <span class="text-sky-400 font-mono text-sm bg-sky-500/10 px-3 py-1 rounded-full">MAR 2022 - PRESENT</span>
                         </div>
                         <p class="text-slate-300 font-semibold mb-4 text-lg">Tata Consultancy Services, Gurugram</p>
-                        <ul class="text-slate-400 text-sm space-y-3 text-left list-none">
-                            <li class="flex gap-2"><span>•</span> Implemented Splunk SignalFx for real-time monitoring and automated risk alerting.</li>
-                            <li class="flex gap-2"><span>•</span> Automated infrastructure provisioning with AWS CloudFormation; managed environments using Docker, Terraform, and OpenTofu.</li>
-                            <li class="flex gap-2"><span>•</span> Refactored legacy code, improving usability and reducing runtime by 50%.</li>
-                            <li class="flex gap-2"><span>•</span> Delivered secure GCP CDN using HTTPS Load Balancer and Cloud Armor, cutting latency by 30%.</li>
-                            <li class="flex gap-2"><span>•</span> Architected cloud infrastructure using AWS CDK (TypeScript/Python) for reusable stacks.</li>
-                            <li class="flex gap-2"><span>•</span> Enhanced DevSecOps by integrating AI-based log analysis and threat detection.</li>
+                        <ul class="text-slate-400 text-sm space-y-2 list-none">
+                            <li>• Implemented Splunk SignalFx for real-time monitoring.</li>
+                            <li>• Automated provisioning with CloudFormation, Docker, & Terraform.</li>
+                            <li>• Refactored legacy code, reducing runtime by 50%.</li>
+                            <li>• Delivered GCP CDN with HTTPS Load Balancer (30% latency cut).</li>
+                            <li>• Architected reusable AWS CDK stacks in TypeScript & Python.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="mb-16 md:w-1/2 md:pl-12 relative md:ml-[50%]">
-                    <span class="absolute w-5 h-5 bg-slate-700 rounded-full -left-[11px] border-4 border-slate-950 z-10"></span>
-                    <div class="glass-card p-8 rounded-3xl animate-fadeIn">
+                <div class="experience-item animate-fadeIn">
+                    <span class="absolute w-5 h-5 bg-slate-600 rounded-full border-4 border-slate-950 z-10 
+                        left-[12px] md:left-[-10px] top-8"></span>
+                    <div class="glass-card p-8 rounded-3xl ml-10 md:ml-0">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                             <h3 class="text-2xl font-bold text-white">Software Engineer</h3>
                             <span class="text-slate-400 font-mono text-sm bg-slate-800 px-3 py-1 rounded-full">OCT 2020 - DEC 2021</span>
                         </div>
                         <p class="text-slate-300 font-semibold mb-4 text-lg">DPOD Labs, Bengaluru</p>
-                        <ul class="text-slate-400 text-sm space-y-3 list-none">
-                            <li class="flex gap-2"><span>•</span> Deployed secure, scalable AWS environments (EC2, S3, RDS), improving performance by 40%.</li>
-                            <li class="flex gap-2"><span>•</span> Reduced provisioning time by 70% using CloudFormation automation.</li>
-                            <li class="flex gap-2"><span>•</span> Developed scalable Python-based APIs with Flask, optimizing serverless handlers.</li>
-                            <li class="flex gap-2"><span>•</span> Designed high-availability systems with load balancing and fault tolerance.</li>
-                            <li class="flex gap-2"><span>•</span> Maintained high proficiency (88-95%) in Lambda, CloudFront, S3, and cloud infrastructure.</li>
+                        <ul class="text-slate-400 text-sm space-y-2 list-none">
+                            <li>• Architected scalable AWS environments, improving performance by 40%.</li>
+                            <li>• Reduced provisioning time by 70% with automation.</li>
+                            <li>• Developed scalable Python APIs with Flask.</li>
+                            <li>• Designed high-availability systems with fault tolerance.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="mb-8 md:w-1/2 md:pr-12 md:text-right md:ml-[-50%] relative">
-                    <span class="absolute w-5 h-5 bg-slate-800 rounded-full -left-[11px] md:-right-[11px] md:left-auto border-4 border-slate-950 z-10"></span>
-                    <div class="glass-card p-8 rounded-3xl animate-fadeIn">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div class="experience-item animate-fadeIn">
+                    <span class="absolute w-5 h-5 bg-slate-800 rounded-full border-4 border-slate-950 z-10 
+                        left-[12px] md:left-auto md:right-[-10px] top-8"></span>
+                    <div class="glass-card p-8 rounded-3xl ml-10 md:ml-0 md:text-right">
+                        <div class="flex flex-col md:flex-row-reverse justify-between items-start md:items-center mb-4 gap-2">
                             <h3 class="text-2xl font-bold text-white">Software Developer</h3>
                             <span class="text-slate-500 font-mono text-sm bg-slate-900 px-3 py-1 rounded-full">MAY 2020 - OCT 2020</span>
                         </div>
                         <p class="text-slate-300 font-semibold mb-4 text-lg">Moreyeahs Inc, Indore</p>
-                        <ul class="text-slate-400 text-sm space-y-3 text-left list-none">
-                            <li class="flex gap-2"><span>•</span> Developed REST APIs using Django Rest Framework for efficient data handling.</li>
-                            <li class="flex gap-2"><span>•</span> Leveraged AWS (ECS, ELB, Auto Scaling) for high-performance data analysis.</li>
-                            <li class="flex gap-2"><span>•</span> Contributed to web development and data-driven actionable insights.</li>
+                        <ul class="text-slate-400 text-sm space-y-2 list-none">
+                            <li>• Developed REST APIs using Django Rest Framework.</li>
+                            <li>• Leveraged AWS ECS & ELB for scalable data analysis.</li>
+                            <li>• Conducted data analysis to derive actionable insights.</li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <section id="education" class="py-24">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center">Education</h2>
+            <h2 class="text-4xl font-bold mb-16 text-center text-white">Education</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-8 rounded-3xl">
+                <div class="glass-card p-8 rounded-3xl animate-fadeIn">
                     <span class="text-sky-400 text-sm font-mono mb-2 block">2017 - 2019</span>
                     <h3 class="text-xl font-bold mb-2">Master of Computer Applications</h3>
                     <p class="text-slate-400 text-sm">IPS Academy Indore</p>
                 </div>
-                <div class="glass-card p-8 rounded-3xl">
+                <div class="glass-card p-8 rounded-3xl animate-fadeIn">
                     <span class="text-sky-400 text-sm font-mono mb-2 block">2014 - 2017</span>
                     <h3 class="text-xl font-bold mb-2">Bachelor of Computer Applications</h3>
                     <p class="text-slate-400 text-sm">ITM University Gwalior</p>
@@ -221,7 +259,7 @@
     <footer id="contact" class="py-24 bg-slate-950 border-t border-slate-900">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-4xl font-bold mb-6">Let's Build Scalable Infrastructure</h2>
+                <h2 class="text-4xl font-bold mb-6 text-white">Let's Build Scalable Infrastructure</h2>
                 <p class="text-slate-400 mb-8">Open for opportunities in DevOps and Cloud Architecture.</p>
                 <div class="space-y-4">
                     <div class="flex items-center gap-4 text-slate-300">
@@ -239,9 +277,9 @@
                 </div>
             </div>
             <form class="glass-card p-8 rounded-3xl space-y-4">
-                <input type="text" placeholder="Full Name" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none">
-                <input type="email" placeholder="Email Address" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none">
-                <textarea placeholder="How can we collaborate on infrastructure?" rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none"></textarea>
+                <input type="text" placeholder="Full Name" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none text-white">
+                <input type="email" placeholder="Email Address" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none text-white">
+                <textarea placeholder="How can we collaborate?" rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none text-white"></textarea>
                 <button class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-lg font-bold transition">Send Message</button>
             </form>
         </div>
@@ -252,6 +290,7 @@
 
     <script>
         lucide.createIcons();
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -259,7 +298,8 @@
                 }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+        document.querySelectorAll('.animate-fadeIn').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
