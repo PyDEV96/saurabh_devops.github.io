@@ -65,6 +65,13 @@
                 align-self: flex-end;
             }
         }
+        /* Floating Animation for Logos */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .logo-float { animation: float 5s ease-in-out infinite; }
+        .logo-float-delayed { animation: float 6s ease-in-out infinite 1.5s; }
     </style>
 </head>
 <body class="grid-bg">
