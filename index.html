@@ -28,15 +28,6 @@
         }
         .animate-fadeIn { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
 
-        /* Floating Animation for Logos */
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        .logo-float { animation: float 4s ease-in-out infinite; }
-        .logo-float-delayed { animation: float 5s ease-in-out infinite 1s; }
-
         /* Timeline Fixes */
         .timeline-container::before {
             content: '';
@@ -80,7 +71,7 @@
 
     <nav class="fixed w-full z-50 top-0 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold flex items-center gap-2 text-white">
+            <div class="text-xl font-bold flex items-center gap-2">
                 <span class="text-sky-400">></span> Saurabh Sharma
             </div>
             <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
@@ -93,11 +84,10 @@
         </div>
     </nav>
 
-    <section id="profile" class="min-h-screen flex items-center pt-20 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative">
-            
+    <section id="profile" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="animate-fadeIn">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">Saurabh Sharma</h1>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Saurabh Sharma</h1>
                 <div class="mono bg-slate-800/50 p-3 rounded-lg border border-slate-700 text-sky-400 mb-8 inline-block">
                     $ DevOps Engineer | Cloud Architect | Automation Specialist
                 </div>
@@ -106,30 +96,14 @@
                     Focused on reliability engineering, performance optimization, and AI-assisted monitoring.
                 </p>
                 <div class="flex gap-4">
-                    <a href="saurabh_sharma_cloud.pdf" download class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-lg shadow-sky-500/20">Download Resume</a>
-                    <a href="#" target="_blank" class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-lg font-semibold transition text-white">LinkedIn Profile</a>
+                    <a href="Resume.pdf" download class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-lg shadow-sky-500/20">Download Resume</a>
+                    <a href="#" target="_blank" class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-lg font-semibold transition">LinkedIn Profile</a>
                 </div>
             </div>
-
-            <div class="relative flex justify-center items-center h-[500px]">
-                
-                <div class="relative z-10 w-72 md:w-96 transform hover:scale-105 transition duration-500">
-                    <img src="https://img.freepik.com/free-vector/anime-style-boy-character_23-2151044439.jpg?t=st=1720192534~exp=1720196134~hmac=6b93a027962c0e179e8e6040a43058869c9b986e8e69006e8b4e4e9a8e9e4e4e&w=826" 
-                         alt="DevOps Character" 
-                         class="rounded-3xl shadow-2xl border-4 border-slate-800 grayscale-[20%] hover:grayscale-0 transition duration-500">
-                </div>
-
-                <div class="absolute top-10 right-10 md:right-20 z-20 logo-float">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="w-16 h-16 drop-shadow-[0_0_15px_rgba(255,153,0,0.5)]" alt="AWS">
-                </div>
-                <div class="absolute bottom-10 left-10 md:left-20 z-20 logo-float-delayed">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_Platform_Logo.svg" class="w-16 h-16 drop-shadow-[0_0_15px_rgba(66,133,244,0.5)]" alt="GCP">
-                </div>
-                <div class="absolute top-20 left-0 md:left-5 z-20 logo-float">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" class="w-14 h-14 drop-shadow-[0_0_15px_rgba(132,74,236,0.5)]" alt="Terraform">
-                </div>
-                <div class="absolute bottom-20 right-0 md:right-5 z-20 logo-float-delayed">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="w-14 h-14 drop-shadow-[0_0_15px_rgba(75,139,190,0.5)]" alt="Python">
+            <div class="relative flex justify-center">
+                <div class="w-80 h-80 bg-gradient-to-tr from-sky-500 to-indigo-600 rounded-3xl rotate-3 absolute opacity-20 animate-pulse"></div>
+                <div class="w-80 h-80 bg-slate-800 rounded-3xl relative z-10 overflow-hidden border border-slate-700">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Saurabh" alt="Avatar" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -170,30 +144,30 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="glass-card p-8 rounded-3xl text-left">
                     <i data-lucide="cloud" class="text-sky-400 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-6 text-white">Cloud & DevOps</h3>
+                    <h3 class="text-xl font-bold mb-6">Cloud & DevOps</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">AWS</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">GCP</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">Docker</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">Terraform</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">AWS</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">GCP</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Docker</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Terraform</span>
                     </div>
                 </div>
                 <div class="glass-card p-8 rounded-3xl text-left">
                     <i data-lucide="shield-check" class="text-sky-400 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-6 text-white">Monitoring & Security</h3>
+                    <h3 class="text-xl font-bold mb-6">Monitoring & Security</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">Splunk SignalFx</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">PagerDuty</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">AI Log Analysis</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Splunk SignalFx</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">PagerDuty</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">AI-based Log Analysis</span>
                     </div>
                 </div>
                 <div class="glass-card p-8 rounded-3xl text-left">
                     <i data-lucide="code-2" class="text-sky-400 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-6 text-white">Development</h3>
+                    <h3 class="text-xl font-bold mb-6">Development</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">Python</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">TypeScript</span>
-                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700 text-slate-300">Django REST</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Python</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">TypeScript</span>
+                        <span class="bg-slate-800 px-3 py-1 rounded-md text-sm border border-slate-700">Django REST</span>
                     </div>
                 </div>
             </div>
@@ -203,23 +177,31 @@
     <section id="experience" class="py-24 bg-slate-900/50">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-4xl font-bold mb-16 text-center text-white">Career Trajectory</h2>
+            
             <div class="timeline-container relative flex flex-col">
+                
                 <div class="experience-item animate-fadeIn">
-                    <span class="absolute w-5 h-5 bg-sky-500 rounded-full border-4 border-slate-950 z-10 left-[12px] md:left-auto md:right-[-10px] top-8"></span>
+                    <span class="absolute w-5 h-5 bg-sky-500 rounded-full border-4 border-slate-950 z-10 
+                        left-[12px] md:left-auto md:right-[-10px] top-8"></span>
                     <div class="glass-card p-8 rounded-3xl ml-10 md:ml-0 md:text-right">
                         <div class="flex flex-col md:flex-row-reverse justify-between items-start md:items-center mb-4 gap-2">
                             <h3 class="text-2xl font-bold text-white">DevOps Engineer</h3>
                             <span class="text-sky-400 font-mono text-sm bg-sky-500/10 px-3 py-1 rounded-full">MAR 2022 - PRESENT</span>
                         </div>
-                        <p class="text-slate-300 font-semibold mb-4 text-lg">TCS, Gurugram</p>
+                        <p class="text-slate-300 font-semibold mb-4 text-lg">Tata Consultancy Services, Gurugram</p>
                         <ul class="text-slate-400 text-sm space-y-2 list-none">
-                            <li>• Implemented Splunk SignalFx for monitoring.</li>
-                            <li>• Automated provisioning with CloudFormation & Terraform.</li>
+                            <li>• Implemented Splunk SignalFx for real-time monitoring.</li>
+                            <li>• Automated provisioning with CloudFormation, Docker, & Terraform.</li>
+                            <li>• Refactored legacy code, reducing runtime by 50%.</li>
+                            <li>• Delivered GCP CDN with HTTPS Load Balancer (30% latency cut).</li>
+                            <li>• Architected reusable AWS CDK stacks in TypeScript & Python.</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="experience-item animate-fadeIn">
-                    <span class="absolute w-5 h-5 bg-slate-600 rounded-full border-4 border-slate-950 z-10 left-[12px] md:left-[-10px] top-8"></span>
+                    <span class="absolute w-5 h-5 bg-slate-600 rounded-full border-4 border-slate-950 z-10 
+                        left-[12px] md:left-[-10px] top-8"></span>
                     <div class="glass-card p-8 rounded-3xl ml-10 md:ml-0">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                             <h3 class="text-2xl font-bold text-white">Software Engineer</h3>
@@ -227,9 +209,48 @@
                         </div>
                         <p class="text-slate-300 font-semibold mb-4 text-lg">DPOD Labs, Bengaluru</p>
                         <ul class="text-slate-400 text-sm space-y-2 list-none">
-                            <li>• Scaled AWS environments, improving performance by 40%.</li>
+                            <li>• Architected scalable AWS environments, improving performance by 40%.</li>
+                            <li>• Reduced provisioning time by 70% with automation.</li>
+                            <li>• Developed scalable Python APIs with Flask.</li>
+                            <li>• Designed high-availability systems with fault tolerance.</li>
                         </ul>
                     </div>
+                </div>
+
+                <div class="experience-item animate-fadeIn">
+                    <span class="absolute w-5 h-5 bg-slate-800 rounded-full border-4 border-slate-950 z-10 
+                        left-[12px] md:left-auto md:right-[-10px] top-8"></span>
+                    <div class="glass-card p-8 rounded-3xl ml-10 md:ml-0 md:text-right">
+                        <div class="flex flex-col md:flex-row-reverse justify-between items-start md:items-center mb-4 gap-2">
+                            <h3 class="text-2xl font-bold text-white">Software Developer</h3>
+                            <span class="text-slate-500 font-mono text-sm bg-slate-900 px-3 py-1 rounded-full">MAY 2020 - OCT 2020</span>
+                        </div>
+                        <p class="text-slate-300 font-semibold mb-4 text-lg">Moreyeahs Inc, Indore</p>
+                        <ul class="text-slate-400 text-sm space-y-2 list-none">
+                            <li>• Developed REST APIs using Django Rest Framework.</li>
+                            <li>• Leveraged AWS ECS & ELB for scalable data analysis.</li>
+                            <li>• Conducted data analysis to derive actionable insights.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center text-white">Education</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-3xl animate-fadeIn">
+                    <span class="text-sky-400 text-sm font-mono mb-2 block">2017 - 2019</span>
+                    <h3 class="text-xl font-bold mb-2">Master of Computer Applications</h3>
+                    <p class="text-slate-400 text-sm">IPS Academy Indore</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl animate-fadeIn">
+                    <span class="text-sky-400 text-sm font-mono mb-2 block">2014 - 2017</span>
+                    <h3 class="text-xl font-bold mb-2">Bachelor of Computer Applications</h3>
+                    <p class="text-slate-400 text-sm">ITM University Gwalior</p>
                 </div>
             </div>
         </div>
@@ -239,26 +260,45 @@
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
             <div>
                 <h2 class="text-4xl font-bold mb-6 text-white">Let's Build Scalable Infrastructure</h2>
-                <div class="space-y-4 text-slate-300">
-                    <div class="flex items-center gap-4"><i data-lucide="mail" class="text-sky-400"></i> saurabh.sharma0695@gmail.com</div>
-                    <div class="flex items-center gap-4"><i data-lucide="phone" class="text-sky-400"></i> +91 8962342278</div>
-                    <div class="flex items-center gap-4"><i data-lucide="map-pin" class="text-sky-400"></i> Gurugram, India</div>
+                <p class="text-slate-400 mb-8">Open for opportunities in DevOps and Cloud Architecture.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-slate-300">
+                        <i data-lucide="mail" class="w-5 h-5 text-sky-400"></i>
+                        saurabh.sharma0695@gmail.com
+                    </div>
+                    <div class="flex items-center gap-4 text-slate-300">
+                        <i data-lucide="phone" class="w-5 h-5 text-sky-400"></i>
+                        +91 8962342278
+                    </div>
+                    <div class="flex items-center gap-4 text-slate-300">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-sky-400"></i>
+                        Gurugram, India
+                    </div>
                 </div>
             </div>
             <form class="glass-card p-8 rounded-3xl space-y-4">
-                <input type="text" placeholder="Name" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 text-white outline-none">
-                <button class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-lg font-bold">Send Message</button>
+                <input type="text" placeholder="Full Name" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none text-white">
+                <input type="email" placeholder="Email Address" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none text-white">
+                <textarea placeholder="How can we collaborate?" rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-sky-500 outline-none text-white"></textarea>
+                <button class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-lg font-bold transition">Send Message</button>
             </form>
+        </div>
+        <div class="text-center mt-24 text-slate-600 text-sm">
+            © 2026 Saurabh Sharma. All rights reserved.
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('animate-fadeIn');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
             });
         }, { threshold: 0.1 });
+
         document.querySelectorAll('.animate-fadeIn').forEach(el => observer.observe(el));
     </script>
 </body>
